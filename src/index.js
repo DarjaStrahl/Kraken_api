@@ -25,7 +25,7 @@ const configs = [{
     //const tickerInfo = await kraken.api('Ticker', { pair : 'XXBTZEUR' });
 
     configs.forEach(pair => {
-        pair.currentPrice =parseFloat(tickerInfo.result[pair.ticker].a[0])
+        pair.currentPrice =parseFloat(tickerInfo.result[pair.ticker].p[0])
     })
 
 
@@ -33,7 +33,7 @@ const configs = [{
         await wait()
 
         const volume = (pair.amount/ pair.currentPrice).toFixed(6)
-        const price = (pair.currentPrice * 0.5).toFixed(6)
+        const price = (pair.currentPrice).toFixed(6)
         console.log( "price: ", price )
         console.log( "volume: ", volume )
         console.log("Trying to place an order for " + pair.ticker)
