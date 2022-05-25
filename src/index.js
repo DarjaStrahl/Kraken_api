@@ -33,7 +33,7 @@ const configs = [{
         await wait()
 
         const volume = (pair.amount/ pair.currentPrice).toFixed(6)
-        const price = (pair.currentPrice-1000).toFixed(1)
+        const price = (pair.currentPrice-500).toFixed(1)
         console.log( "price: ", price )
         console.log( "volume: ", volume )
         console.log("Trying to place an order for " + pair.ticker)
