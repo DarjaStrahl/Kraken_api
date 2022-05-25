@@ -33,11 +33,11 @@ const configs = [{
         await wait()
 
         const volume = (pair.amount/ pair.currentPrice).toFixed(6)
-        const price = (pair.currentPrice).toFixed(6)
+        const price = (pair.currentPrice-1000).toFixed(1)
         console.log( "price: ", price )
         console.log( "volume: ", volume )
         console.log("Trying to place an order for " + pair.ticker)
-        if ( eurBalance - pair.amount < 100){
+        if ( eurBalance  < 99){
             console.log("Insufficient funds, abort.")
             return
         }
@@ -50,7 +50,7 @@ const configs = [{
                 ordertype: 'limit',
                 price,
                 volume,
-                expiretm: '+${60 * 60 * 24)',
+                expiretm: '+604800',
             })
             eurBalance -= pair.amount
             console.log( "result", result )
