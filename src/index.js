@@ -11,7 +11,7 @@ async function wait() {
 
 const configs = [{
     ticker: "XXBTZEUR",
-    amount: 100,
+    amount: 50,
     },
 ]
 
@@ -37,7 +37,7 @@ const configs = [{
         console.log( "current price: ", pair.currentPrice )
         console.log( "volume: ", volume )
         console.log("Trying to place an order for " + pair.ticker)
-        if ( eurBalance  < 99){
+        if ( eurBalance  < 49){
             console.log("Insufficient funds, abort.")
             return
         }
